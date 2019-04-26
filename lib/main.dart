@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:all_in_all_flutter/pages/index.dart';
+import 'package:all_in_all_flutter/pages/explore.dart';
 import 'package:all_in_all_flutter/pages/homeDrawer.dart';
 import 'package:all_in_all_flutter/pages/rank.dart';
 void main() => runApp(new MyApp());
@@ -49,7 +49,7 @@ bool _selected = false;
         ),
         body: new TabBarView(
           children: <Widget>[
-            new Center(child: new Index()),
+            new Center(child: new Explore()),
             new Center(child: new Rank()),
           ],
         ),

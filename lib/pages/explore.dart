@@ -3,44 +3,33 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/taurus_header.dart';
-import 'package:flutter_easyrefresh/taurus_footer.dart';
+import 'package:flutter_easyrefresh/bezier_bounce_footer.dart';
 
-/// 冲上云霄页面
-class TaurusPage extends StatefulWidget {
+/// 弹出圆圈样式页面
+class Explore extends StatefulWidget {
   @override
-  _TaurusPageState createState() => _TaurusPageState();
+  _Explore createState() => _Explore();
 }
 
-class _TaurusPageState extends State<TaurusPage> {
+class _Explore extends State<Explore> {
   List<String> addStr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-  List<String> str = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-  GlobalKey<EasyRefreshState> _easyRefreshKey =
-      new GlobalKey<EasyRefreshState>();
-  GlobalKey<RefreshHeaderState> _headerKey =
-      new GlobalKey<RefreshHeaderState>();
-  GlobalKey<RefreshFooterState> _footerKey =
-      new GlobalKey<RefreshFooterState>();
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
+  List<String> str = ["11", "22", "33", "44", "55", "66", "77", "88", "99", "00"];
+  GlobalKey<EasyRefreshState> _easyRefreshKey = new GlobalKey<EasyRefreshState>();
+  GlobalKey<RefreshFooterState> _footerKey = new GlobalKey<RefreshFooterState>();
+  GlobalKey<RefreshHeaderState> _headerKey = new GlobalKey<RefreshHeaderState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Taurus"),
-      ),
       body: Center(
           child: new EasyRefresh(
         key: _easyRefreshKey,
         refreshHeader: TaurusHeader(
           key: _headerKey,
         ),
-        refreshFooter: TaurusFooter(
+        refreshFooter: BezierBounceFooter(
           key: _footerKey,
+          color: Theme.of(context).scaffoldBackgroundColor,
         ),
         child: new ListView.builder(
             //ListView的Item
@@ -78,4 +67,3 @@ class _TaurusPageState extends State<TaurusPage> {
     );
   }
 }
-
