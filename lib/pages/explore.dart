@@ -14,6 +14,7 @@ class Explore extends StatefulWidget {
 class _Explore extends State<Explore> {
   List<String> addStr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
   List<String> str = ["11", "22", "33", "44", "55", "66", "77", "88", "99", "00"];
+  List<String> str1 = ["11", "22", "33", "44", "55", "66", "77", "88", "99", "00"];
   GlobalKey<EasyRefreshState> _easyRefreshKey = new GlobalKey<EasyRefreshState>();
   GlobalKey<RefreshFooterState> _footerKey = new GlobalKey<RefreshFooterState>();
   GlobalKey<RefreshHeaderState> _headerKey = new GlobalKey<RefreshHeaderState>();
